@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MageProfis_SecureAdmin>
+            <version>1.0.0.0</version>
+        </MageProfis_SecureAdmin>
+    </modules>
+
+    <global>
+        <blocks>
+            <mpsecureadmin>
+                <class>MageProfis_SecureAdmin_Block</class>
+            </mpsecureadmin>
+        </blocks>
+        <helpers>
+            <mpsecureadmin>
+                <class>MageProfis_SecureAdmin_Helper</class>
+            </mpsecureadmin>
+        </helpers>
+        <models>
+            <mpsecureadmin>
+                <class>MageProfis_SecureAdmin_Model</class>
+            </mpsecureadmin>
+        </models>
+        <events>
+            <controller_action_predispatch_adminhtml_index_login>
+                <observers>
+                    <mpsecureadmin>
+                        <type>singleton</type>
+                        <class>mpsecureadmin/observer</class>
+                        <method>onLogin</method>
+                    </mpsecureadmin>
+                </observers>
+            </controller_action_predispatch_adminhtml_index_login>
+        </events>
+    </global>
+</config>
