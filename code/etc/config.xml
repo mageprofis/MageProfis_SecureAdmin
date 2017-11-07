@@ -41,6 +41,15 @@
                     </mpsecureadmin>
                 </observers>
             </controller_action_predispatch_adminhtml_index_forgotpassword>
+            <controller_action_predispatch_adminhtml_index_resetPassword>
+                <observers>
+                    <mpsecureadmin>
+                        <type>singleton</type>
+                        <class>mpsecureadmin/observer</class>
+                        <method>onLogin</method>
+                    </mpsecureadmin>
+                </observers>
+            </controller_action_predispatch_adminhtml_index_resetPassword>
         </events>
     </global>
 </config>
