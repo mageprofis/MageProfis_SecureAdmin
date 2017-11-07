@@ -50,6 +50,15 @@
                     </mpsecureadmin>
                 </observers>
             </controller_action_predispatch_adminhtml_index_resetPassword>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <mpsecureadmin>
+                        <type>singleton</type>
+                        <class>mpsecureadmin/observer</class>
+                        <method>onHtmlReplace</method>
+                    </mpsecureadmin>
+                </observers>
+            </core_block_abstract_to_html_after>
         </events>
     </global>
 </config>
