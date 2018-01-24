@@ -8,3 +8,16 @@ Add a IP Whitelist to prevent the HTTP-Auth for sertain IPs.
 Create two files in the magento root folder namend "secureadmin_ip.txt" and "secureadmin_auth.txt".
 Add your allowed ips line seperated into ""secureadmin_ip.txt".
 Add your users for the HTTP-Auth line seperated into "secureadmin_auth.txt" with the format "name:password" e.g. "admin:admin123".
+
+**Add this to your .htaccess**
+
+```
+<Files secureadmin_ip.txt>
+  order allow,deny
+  deny from all
+</Files>
+<Files secureadmin_auth.txt>
+  order allow,deny
+  deny from all
+</Files>
+```
